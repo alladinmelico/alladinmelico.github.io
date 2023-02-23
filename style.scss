@@ -256,7 +256,7 @@ section {
   &__card {
     width: 100%;
     max-width: 375px;
-    height: 217px;
+    height: 300px;
     border: 3px solid rgba(255, 255, 255, 0.1);
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
@@ -264,11 +264,14 @@ section {
     position: relative;
     margin: 1rem;
 
+    @include md {
+      height: 217;
+    }
+
     img {
       object-fit: cover;
-      object-position: top;
+      object-position: center;
       height: 100%;
-      width: 100%;
     }
     &:hover {
       border-color: white;
@@ -304,7 +307,7 @@ section {
 .techstacks {
   margin: 2rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
   .techstack {
     margin: 1rem;
@@ -353,6 +356,9 @@ section {
     border-radius: 5px;
     padding: 5px;
     margin: 5px;
+    div {
+      display: flex;
+    }
   }
 }
 
