@@ -145,7 +145,7 @@ document.getElementById("projects-container").innerHTML = projects.map(
     );
 
     return `
-      <div class="projects__card" data-aos="zoom-in-up" data-aos-delay="${index * 100}">
+      <div class="projects__card" data-aos="zoom-in-up" data-aos-delay="50">
         <img src="./${project.image}" alt="${project.name}" srcset="" loading="lazy">
         <div class="projects__card__details">
           <a href="${project.url}" target="_blank" class="card-title">${project.name}</a>
