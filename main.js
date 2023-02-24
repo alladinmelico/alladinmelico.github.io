@@ -132,7 +132,7 @@ const projects = [
 ];
 
 document.getElementById("projects-container").innerHTML = projects.map(
-  (project) => {
+  (project, index) => {
     const tags = project.tags.map(
       (tag) => `
       <div class="tech-pill">
@@ -145,7 +145,7 @@ document.getElementById("projects-container").innerHTML = projects.map(
     );
 
     return `
-      <div class="projects__card">
+      <div class="projects__card" data-aos="zoom-in-up" data-aos-delay="${index * 100}">
         <img src="./${project.image}" alt="${project.name}" srcset="" loading="lazy">
         <div class="projects__card__details">
           <a href="${project.url}" target="_blank" class="card-title">${project.name}</a>
@@ -228,14 +228,14 @@ const techs = [
 ];
 document.getElementById("techstacks-container").innerHTML = techs.map(
   (tech) => `
-  <a href="${tech.url}" target="_blank" class="techstack">
+  <div class="techstack">
     <div>
       <img src="/${tech.image}" alt="${tech.name}" class="logo" loading="lazy">
     </div>
-    <p class="title">
+    <a href="${tech.url}" target="_blank" class="title">
       ${tech.name}
-    </p>
-  </a>
+    </a>
+  </div>
 `
 ).join('');
 
@@ -288,10 +288,10 @@ const socmends = [
 ];
 document.getElementById("socmeds-container").innerHTML = socmends.map(
   (socmed) => `
-  <a href="${socmed.url}" target="_blank" rel="noopener noreferrer">
+  <a href="${socmed.url}" target="_blank" rel="noopener noreferrer" data-aos="fade-right">
     ${socmed.icon}
     <p>${socmed.name}</p>    
-    <img src="/arrow.svg" alt="arrow">         
+    <img src="/arrow.svg" alt="arrow" class="socmed-arrow">         
   </a>
 `
 );

@@ -26,6 +26,7 @@
       href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&display=swap"
       rel="stylesheet"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>Alladin Melico</title>
   </head>
 
@@ -48,6 +49,7 @@
             alt="Profile"
             loading="lazy"
             data-aos="zoom-in"
+            data-aos-delay="100"
           />
         </div>
         <div>
@@ -63,6 +65,8 @@
           id="banner-triangle"
           class="background-images"
           loading="lazy"
+          data-aos="zoom-in-up"
+          data-aos-delay="300"
         />
         <img
           src="/hexagon.svg"
@@ -70,6 +74,8 @@
           id="banner-hexagon"
           class="background-images"
           loading="lazy"
+          data-aos="zoom-in-up"
+          data-aos-delay="300"
         />
         <img
           src="/circle-wave.svg"
@@ -77,11 +83,13 @@
           id="banner-wave"
           class="background-images"
           loading="lazy"
+          data-aos="zoom-in-up"
+          data-aos-delay="300"
         />
       </section>
       <section id="projects">
         <div class="section-title-container">
-          <h2>Projects</h2>
+          <h2 data-aos="fade-right">Projects</h2>
           <img
             src="/spark.svg"
             alt="spark"
@@ -94,7 +102,7 @@
       </section>
       <section id="techstack">
         <div class="section-title-container">
-          <h2>Techstack</h2>
+          <h2 data-aos="fade-right">Techstack</h2>
           <div class="wave-container">
             <img
               src="/wave.svg"
@@ -107,9 +115,9 @@
         </div>
         <div id="techstacks-container" class="techstacks"></div>
       </section>
-      <section data-aos="fade-up" id="contact">
+      <section id="contact">
         <div class="section-title-container">
-          <h2>Contact</h2>
+          <h2 data-aos="fade-right">Contact</h2>
           <img
             src="/triangle.svg"
             alt="triangle"
@@ -142,5 +150,9 @@
       class="background-images"
     />
     <script type="module" src="/main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
