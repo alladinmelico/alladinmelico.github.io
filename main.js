@@ -136,7 +136,7 @@ document.getElementById("projects-container").innerHTML = projects.map(
     const tags = project.tags.map(
       (tag) => `
       <div class="tech-pill">
-        <div>
+        <div class="tech-pill-image">
           <img src="/${tag.image}" alt="${tag.name}" loading="lazy">
         </div>
         <p>${tag.name}</p>
