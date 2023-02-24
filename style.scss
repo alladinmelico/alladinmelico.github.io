@@ -40,6 +40,7 @@ body {
   background: linear-gradient(200deg, #281765 0%, #0e1336 50%);
   background-attachment: fixed;
   background-repeat: no-repeat;
+  // overflow: hidden; 
 }
 
 main {
@@ -429,6 +430,47 @@ section {
 
 .bg-gradient {
   animation: pulse 1s infinite ease alternate;
+}
+
+@keyframes rotate {
+  from {
+    rotate: 0deg;
+  }
+  
+  50% {
+    scale: 1 1.5;
+  }
+  
+  to {
+    rotate: 360deg;
+  }
+}
+
+#blob {
+  background-color: $dark-blue;
+  height: 34vmax;
+  aspect-ratio: 1;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: radial-gradient(
+    56.11% 56.11% at 49.98% 43.89%,
+    #3d2397 0%,
+    rgba(186, 61, 178, 0) 85.42%
+  );  animation: rotate 20s infinite;
+  opacity: 0.8;
+  z-index: -1;
+}
+
+#blur {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  backdrop-filter: blur(12vmax);
+  z-index: -1;
 }
 
 @keyframes rotation {
