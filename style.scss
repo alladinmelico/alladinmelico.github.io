@@ -1,4 +1,8 @@
-@import "./media-queries.scss";
+@mixin md {
+  @media screen and (min-width: 640px) {
+    @content;  
+  }
+}
 
 :root {
   font-family: "Archivo", sans-serif;
@@ -289,7 +293,7 @@ section {
       height: 100%;
       background: linear-gradient(180deg, #0c0f40e7 40%, $darker-blue 100%);
       padding: 1rem;
-      
+
       .card-title {
         font-size: 32px;
         color: white;
@@ -373,7 +377,12 @@ section {
   height: 248px;
   left: 15%;
   top: 10%;
-  background: radial-gradient(50% 50% at 50% 50%, #ba3db2 0%, #623ae9 57.29%, rgba(186, 61, 178, 0) 100%);
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #ba3db2 0%,
+    #623ae9 57.29%,
+    rgba(186, 61, 178, 0) 100%
+  );
   mix-blend-mode: multiply;
   opacity: 20%;
   position: fixed;
@@ -384,7 +393,11 @@ section {
   right: 0;
   width: 542px;
   height: 547px;
-  background: radial-gradient(56.11% 56.11% at 49.98% 43.89%, #3d2397 0%, rgba(186, 61, 178, 0) 85.42%);
+  background: radial-gradient(
+    56.11% 56.11% at 49.98% 43.89%,
+    #3d2397 0%,
+    rgba(186, 61, 178, 0) 85.42%
+  );
   mix-blend-mode: soft-light;
   opacity: 80%;
   position: fixed;
