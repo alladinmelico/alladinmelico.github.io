@@ -70,14 +70,20 @@ h2 {
 
 h3 {
   color: $pink;
-  font-size: 32px;
+  font-size: 22px;
+  @include md {
+    font-size: 32px;
+  }
   font-weight: 900;
 }
 
 .main-nav {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+  @include md {
+    justify-content: space-between;
+  }
   width: 100%;
   padding: 1rem;
   flex-wrap: wrap;
@@ -86,6 +92,7 @@ h3 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    
     a {
       text-decoration: none;
       color: white;
@@ -309,10 +316,12 @@ section {
 }
 
 .techstacks {
-  margin: 2rem;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  @include md {
+    margin: 2rem;
+  }
   .techstack {
     margin: 1rem;
     margin-bottom: 2rem;

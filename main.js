@@ -237,7 +237,7 @@ document.getElementById("techstacks-container").innerHTML = techs.map(
     </p>
   </a>
 `
-);
+).join('');
 
 const socmends = [
   {
