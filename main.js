@@ -157,7 +157,7 @@ document.getElementById("projects-container").innerHTML = projects.map(
       </div>
     `;
   }
-);
+).join('');
 
 const techs = [
   {
@@ -294,14 +294,14 @@ document.getElementById("socmeds-container").innerHTML = socmends.map(
     <img src="/arrow.svg" alt="arrow" class="socmed-arrow">         
   </a>
 `
-);
+).join('');
 document.getElementById("socmed-icons-container").innerHTML = socmends.map(
   (socmed) => `
   <a href="${socmed.url}" target="_blank" rel="noopener noreferrer">
     ${socmed.icon}
   </a>
 `
-);
+).join('');
 
 const blob = document.getElementById("blob");
 
