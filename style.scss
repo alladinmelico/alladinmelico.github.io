@@ -109,6 +109,21 @@ h3 {
   }
 }
 
+.logo-path {
+  stroke: $pink;
+  stroke-width: 3px;
+  fill: white;
+  stroke-dasharray: 500;
+  stroke-dashoffset: -500;
+  animation: animate 5s forwards infinite;
+}
+
+@keyframes animate {
+  100% {
+    stroke-dashoffset: 500;
+  }
+}
+
 #contact-button {
   border: 2px solid $dark-purple;
   border-radius: 10px;
@@ -269,7 +284,7 @@ section {
 
   &__card {
     width: 100%;
-    max-width: 375px;
+    max-width: 562px;
     height: 300px;
     border: 3px solid rgba(255, 255, 255, 0.1);
     background-color: rgb(255, 255, 255);
@@ -284,8 +299,11 @@ section {
 
     img {
       object-fit: cover;
-      object-position: center;
+      object-position: top;
       height: 100%;
+      @include md {
+        width: 100%;
+      }
     }
     &:hover {
       border-color: white;

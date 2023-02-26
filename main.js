@@ -142,7 +142,7 @@ document.getElementById("projects-container").innerHTML = projects.map(
         <p>${tag.name}</p>
       </div>
     `
-    );
+    ).join('');
 
     return `
       <div class="projects__card" data-aos="zoom-in-up" data-aos-delay="50">
