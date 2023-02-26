@@ -223,6 +223,21 @@ const techs = [
     url: "https://vuejs.org/",
   },
   {
+    name: "Next.js",
+    image: "next.webp",
+    url: "https://nextjs.org/",
+  },
+  {
+    name: "Nuxt.js",
+    image: "nuxt.webp",
+    url: "https://nuxjs.org/",
+  },
+  {
+    name: "Node.js",
+    image: "node.webp",
+    url: "https://nodejs.org/",
+  },
+  {
     name: "Tailwind CS",
     image: "tailwind.webp",
     url: "https://tailwindcss.com/",
@@ -241,11 +256,6 @@ const techs = [
     image: "mui.webp",
     name: "Material UI",
     url: "https://mui.com/",
-  },
-  {
-    image: "filament.svg",
-    name: "Filament PHP",
-    url: "https://filamentphp.com/",
   },
   {
     image: "nova.svg",
