@@ -1,4 +1,51 @@
 import "./style.scss";
+import Swiper, { Navigation, Pagination, Autoplay } from 'swiper';
+// import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+const swiper = new Swiper('.swiper', {
+  modules: [Navigation, Pagination, Autoplay],
+  direction: 'horizontal',
+  pagination: {
+    el: '.swiper-pagination',
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+  slidesPerView: 1,
+  spaceBetween: 10,
+  autoHeight: true,
+  autoplay: {
+    delay: 5000,
+  },
+  breakpoints: {
+    420: {
+      slidesPerView: 2,
+      spaceBetween: 20
+    },
+    640: {
+      slidesPerView: 3,
+      spaceBetween: 50
+    },
+    
+  }
+});
+
+const menuButton = document.querySelector('#menu-button')
+const menuOpen = document.querySelector('#menu-open')
+const menuClose = document.querySelector('#menu-close')
+const menuItems = document.querySelector('#menu-items')
+menuButton.addEventListener('click', (e) => {
+  menuItems.classList.toggle('menu-show')
+  menuOpen.classList.toggle('hide-button')
+  menuClose.classList.toggle('hide-button')
+})
 
 const tags = {
   laravel: {
@@ -300,6 +347,61 @@ document.getElementById("socmed-icons-container").innerHTML = socmends.map(
   <a href="${socmed.url}" target="_blank" rel="noopener noreferrer">
     ${socmed.icon}
   </a>
+`
+).join('');
+
+const posts = [
+  {
+    name: 'facemask', 
+    description: 'A mini social media app for sharing Pandemic experiences. Post you thoughts, follow users, chat with them, easily see their posts on your news feed and a lot more!',
+    url: 'https://dev.to/alladinmelico/facemask-a-mini-social-media-app-for-sharing-pandemic-experiences-3-n-i0f',
+    image: 'facemask-cover.webp',
+    tag: 'Programming'
+  },
+  {
+    name: 'Vector Art Portrait', 
+    description: 'A video timelaps of how I create a vector art portrait using Adobe Illustrator',
+    url: 'https://youtu.be/2b_Kaxb9stg',
+    image: 'vector-portrait.webp',
+    tag: 'Design'
+  },
+  {
+    name: 'Logo making of "Inn"', 
+    description: 'A video timelaps of how I create a random logo called "Inn" using Adobe Illustrator.',
+    url: 'https://youtu.be/vGS-n1AIguI',
+    image: 'inn.webp',
+    tag: 'Design'
+  },
+  {
+    name: 'WPAP Vector art', 
+    description: 'WPAP is a geometric pop-art inspired from cubism. This is a video timelaps of how to create it using Adobe Illustrator',
+    url: 'https://youtu.be/1_vl_MCzKvw',
+    image: 'wpap.webp',
+    tag: 'Design'
+  },
+]
+
+document.getElementById("posts-container").innerHTML = posts.map(
+  post => `
+  <div class="swiper-slide">
+    <div class="post">
+      <div class="post__image">
+        <img src="/${post.image}" alt="${post.name}" loading="lazy">
+      </div>
+      <div class="post__content">
+        <div class="post__content__tag">
+          <div>${post.tag}</div>
+        </div>
+        <a href="#" target="_blank" class="post__content__title">
+          ${post.name} 
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 16H2V2H9V0H2C0.89 0 0 0.9 0 2V16C0 17.1 0.89 18 2 18H16C17.1 18 18 17.1 18 16V9H16V16ZM11 0V2H14.59L4.76 11.83L6.17 13.24L16 3.41V7H18V0H11Z" fill="currentColor"/>
+          </svg>                  
+        </a>
+        <p class="post__content__description">${post.description}</p>
+      </div>
+    </div>
+  </div>
 `
 ).join('');
 
