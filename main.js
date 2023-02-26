@@ -2,19 +2,19 @@ import "./style.scss";
 
 const tags = {
   laravel: {
-    image: "laravel.png",
+    image: "laravel.webp",
     name: "Laravel",
   },
   react: {
-    image: "react.png",
+    image: "react.webp",
     name: "React.js",
   },
   vue: {
-    image: "vue.png",
+    image: "vue.webp",
     name: "Vue.js",
   },
   tailwind: {
-    image: "tailwind.png",
+    image: "tailwind.webp",
     name: "Tailwind CSS",
   },
   vuetify: {
@@ -22,43 +22,43 @@ const tags = {
     name: "Vuetify",
   },
   jquery: {
-    image: "jquery.png",
+    image: "jquery.webp",
     name: "jQuery",
   },
   mui: {
-    image: "mui.png",
+    image: "mui.webp",
     name: "Material UI",
   },
   filament: {
-    image: "filament.png",
+    image: "filament.webp",
     name: "Filament PHP",
   },
   nova: {
-    image: "nova.png",
+    image: "nova.webp",
     name: "Nova Laravel",
   },
   inertia: {
-    image: "inertia.png",
+    image: "inertia.webp",
     name: "Inertia JS",
   },
   pusher: {
-    image: "pusher.png",
+    image: "pusher.webp",
     name: "Pusher",
   },
   java: {
-    image: "java.png",
+    image: "java.webp",
     name: "Java",
   },
   azure: {
-    image: "azure.png",
+    image: "azure.webp",
     name: "Azure",
   },
   codeigniter: {
-    image: "codeigniter.png",
+    image: "codeigniter.webp",
     name: "Codeigniter",
   },
   bootstrap: {
-    image: "bootstrap.png",
+    image: "bootstrap.webp",
     name: "Bootstrap",
   },
 };
@@ -66,37 +66,37 @@ const projects = [
   {
     name: "Mustard School",
     url: "https://mustardschools.app",
-    image: "mustard.png",
+    image: "mustard.webp",
     tags: [tags.laravel, tags.vue, tags.vuetify],
   },
   {
     name: "FARMap",
     url: "https://www.farmap.com.au/",
-    image: "farmap.png",
+    image: "farmap.webp",
     tags: [tags.laravel, tags.vue, tags.vuetify],
   },
   {
     name: "Asia Pacific Journal on Curriculum Studies",
     url: "https://apjcs.org/",
-    image: "apjcs.png",
+    image: "apjcs.webp",
     tags: [tags.laravel, tags.vue, tags.inertia],
   },
   {
     name: "Integrity Initiative",
     url: "https://integrityinitiative.org/",
-    image: "integrity.png",
+    image: "integrity.webp",
     tags: [tags.laravel, tags.nova],
   },
   {
     name: "Giving Tuesday PH",
     url: "https://givingtuesday.ph/",
-    image: "givingtuesday.png",
+    image: "givingtuesday.webp",
     tags: [tags.laravel, tags.filament],
   },
   {
     name: "Girl Scouts of the Philippines",
     url: "https://girlscouts.org.ph/",
-    image: "gsp.png",
+    image: "gsp.webp",
     tags: [tags.laravel, tags.nova],
   },
   {
@@ -108,13 +108,13 @@ const projects = [
   {
     name: "SSC System",
     url: "https://github.com/alladinmelico/facemask",
-    image: "ssc.png",
+    image: "ssc.webp",
     tags: [tags.laravel, tags.react, tags.mui, tags.pusher, tags.java],
   },
   {
     name: "E-Cookbook",
     url: "https://github.com/alladinmelico/integration2",
-    image: "ecookbook.png",
+    image: "ecookbook.webp",
     tags: [tags.laravel, tags.jquery, tags.azure],
   },
   {
@@ -162,22 +162,22 @@ document.getElementById("projects-container").innerHTML = projects.map(
 const techs = [
   {
     name: "Laravel",
-    image: "laravel.png",
+    image: "laravel.webp",
     url: "https://laravel.com/",
   },
   {
     name: "React.js",
-    image: "react.png",
+    image: "react.webp",
     url: "https://reactjs.org/",
   },
   {
     name: "Vue.js",
-    image: "vue.png",
+    image: "vue.webp",
     url: "https://vuejs.org/",
   },
   {
     name: "Tailwind CS",
-    image: "tailwind.png",
+    image: "tailwind.webp",
     url: "https://tailwindcss.com/",
   },
   {
@@ -191,7 +191,7 @@ const techs = [
     url: "https://jquery.com/",
   },
   {
-    image: "mui.png",
+    image: "mui.webp",
     name: "Material UI",
     url: "https://mui.com/",
   },
@@ -206,22 +206,22 @@ const techs = [
     url: "https://nova.laravel.com/",
   },
   {
-    image: "inertia.png",
+    image: "inertia.webp",
     name: "Inertia JS",
     url: "https://inertiajs.com/",
   },
   {
-    image: "pusher.png",
+    image: "pusher.webp",
     name: "Pusher",
     url: "https://pusher.com/",
   },
   {
-    image: "codeigniter.png",
+    image: "codeigniter.webp",
     name: "Codeigniter",
     url: "https://codeigniter.com/",
   },
   {
-    image: "bootstrap.png",
+    image: "bootstrap.webp",
     name: "Bootstrap",
     url: "https://getbootstrap.com/",
   },
