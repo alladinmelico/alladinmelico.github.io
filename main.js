@@ -37,7 +37,15 @@ const swiper = new Swiper('.swiper', {
   }
 });
 
-console.log(swiper);
+const menuButton = document.querySelector('#menu-button')
+const menuOpen = document.querySelector('#menu-open')
+const menuClose = document.querySelector('#menu-close')
+const menuItems = document.querySelector('#menu-items')
+menuButton.addEventListener('click', (e) => {
+  menuItems.classList.toggle('menu-show')
+  menuOpen.classList.toggle('hide-button')
+  menuClose.classList.toggle('hide-button')
+})
 
 const tags = {
   laravel: {
