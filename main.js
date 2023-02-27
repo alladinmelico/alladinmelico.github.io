@@ -352,9 +352,14 @@ const techs = [
     url: "https://inertiajs.com/",
   },
   {
-    image: "pusher.webp",
-    name: "Pusher",
-    url: "https://pusher.com/",
+    image: "mysql.webp",
+    name: "MySQL",
+    url: "https://mysql.com/",
+  },
+  {
+    image: "cypress.webp",
+    name: "Cypress",
+    url: "https://cypress.io/",
   },
   {
     image: "codeigniter.webp",
@@ -365,6 +370,11 @@ const techs = [
     image: "bootstrap.webp",
     name: "Bootstrap",
     url: "https://getbootstrap.com/",
+  },
+  {
+    image: "git.webp",
+    name: "Git",
+    url: "https://git-scm.com/",
   },
 ];
 document.getElementById("techstacks-container").innerHTML = techs.map(
