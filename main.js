@@ -1,12 +1,12 @@
 import "./style.scss";
-import Swiper, { Navigation, Pagination, Autoplay } from 'swiper';
+import Swiper, { Navigation, Pagination } from 'swiper';
 // import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 const swiper = new Swiper('.swiper', {
-  modules: [Navigation, Pagination, Autoplay],
+  modules: [Navigation, Pagination],
   direction: 'horizontal',
   pagination: {
     el: '.swiper-pagination',
@@ -21,9 +21,6 @@ const swiper = new Swiper('.swiper', {
   slidesPerView: 1,
   spaceBetween: 10,
   autoHeight: true,
-  autoplay: {
-    delay: 5000,
-  },
   breakpoints: {
     420: {
       slidesPerView: 2,
@@ -124,19 +121,27 @@ const companies = {
 }
 const projects = [
   {
-    name: "Mustard School",
-    url: "https://mustardschools.app",
-    image: "mustard.webp",
-    description: 'Mustard is a Christian ministry that exists to empower young people to be fully alive forever and partners with independent schools to provide Mustard Live events and support the spiritual formation of students. ', 
+    name: "FARMap",
+    url: "https://www.farmap.com.au/",
+    image: "farmap.webp",
+    description: `Map farmer's farm and record all paddock and livestock treatments on their phone, tablet or computer, all linked together. Record livestock movements and treatments as well as all paddock treatments into FARMap.`, 
     tags: [],
     type: projectType.PROFESSIONAL,
     company: companies.APPETISER
   },
   {
-    name: "FARMap",
-    url: "https://www.farmap.com.au/",
-    image: "farmap.webp",
-    description: `Map farmer's farm and record all paddock and livestock treatments on their phone, tablet or computer, all linked together. Record livestock movements and treatments as well as all paddock treatments into FARMap.`, 
+    name: "SSC System",
+    url: "https://github.com/alladinmelico/facemask",
+    image: "ssc.webp",
+    description: 'This is the Safe and Smart Campus. Thesis system for scheduling and monitoring of students that helps to control the spead of virus.', 
+    tags: [tags.laravel, tags.react, tags.mui, tags.pusher, tags.java, tags.raspberry],
+    type: projectType.PERSONAL
+  },
+  {
+    name: "Mustard School",
+    url: "https://mustardschools.app",
+    image: "mustard.webp",
+    description: 'Mustard is a Christian ministry that exists to empower young people to be fully alive forever and partners with independent schools to provide Mustard Live events and support the spiritual formation of students. ', 
     tags: [],
     type: projectType.PROFESSIONAL,
     company: companies.APPETISER
@@ -201,14 +206,6 @@ const projects = [
     image: "facemask.gif",
     description: `An entry for DigitalOcean's hackathon. A mini social media app for sharing pandemic experiences.`, 
     tags: [tags.laravel, tags.vuetify, tags.pusher, tags.inertia],
-    type: projectType.PERSONAL
-  },
-  {
-    name: "SSC System",
-    url: "https://github.com/alladinmelico/facemask",
-    image: "ssc.webp",
-    description: 'This is the Safe and Smart Campus. Thesis system for scheduling and monitoring of students that helps to control the spead of virus.', 
-    tags: [tags.laravel, tags.react, tags.mui, tags.pusher, tags.java, tags.raspberry],
     type: projectType.PERSONAL
   },
   {
@@ -297,6 +294,16 @@ const techs = [
     url: "https://laravel.com/",
   },
   {
+    image: "codeigniter.webp",
+    name: "Codeigniter",
+    url: "https://codeigniter.com/",
+  },
+  {
+    name: "Node.js",
+    image: "node.webp",
+    url: "https://nodejs.org/",
+  },
+  {
     name: "React.js",
     image: "react.webp",
     url: "https://reactjs.org/",
@@ -317,9 +324,14 @@ const techs = [
     url: "https://nuxjs.org/",
   },
   {
-    name: "Node.js",
-    image: "node.webp",
-    url: "https://nodejs.org/",
+    image: "jquery.svg",
+    name: "jQuery",
+    url: "https://jquery.com/",
+  },
+  {
+    image: "inertia.webp",
+    name: "Inertia JS",
+    url: "https://inertiajs.com/",
   },
   {
     name: "Tailwind CS",
@@ -327,14 +339,14 @@ const techs = [
     url: "https://tailwindcss.com/",
   },
   {
+    image: "bootstrap.webp",
+    name: "Bootstrap",
+    url: "https://getbootstrap.com/",
+  },
+  {
     image: "vuetify.svg",
     name: "Vuetify",
     url: "https://vuetifyjs.com/en/",
-  },
-  {
-    image: "jquery.svg",
-    name: "jQuery",
-    url: "https://jquery.com/",
   },
   {
     image: "mui.webp",
@@ -347,11 +359,6 @@ const techs = [
     url: "https://nova.laravel.com/",
   },
   {
-    image: "inertia.webp",
-    name: "Inertia JS",
-    url: "https://inertiajs.com/",
-  },
-  {
     image: "mysql.webp",
     name: "MySQL",
     url: "https://mysql.com/",
@@ -360,16 +367,6 @@ const techs = [
     image: "cypress.webp",
     name: "Cypress",
     url: "https://cypress.io/",
-  },
-  {
-    image: "codeigniter.webp",
-    name: "Codeigniter",
-    url: "https://codeigniter.com/",
-  },
-  {
-    image: "bootstrap.webp",
-    name: "Bootstrap",
-    url: "https://getbootstrap.com/",
   },
   {
     image: "git.webp",
