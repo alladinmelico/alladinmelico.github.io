@@ -108,103 +108,187 @@ const tags = {
     image: "bootstrap.webp",
     name: "Bootstrap",
   },
+  raspberry: {
+    image: "raspberry.webp",
+    name: "Raspberry Pi",
+  },
 };
+const projectType = {
+  PROFESSIONAL: 'professional',
+  PERSONAL: 'personal',
+  ALL: 'all'
+}
+const companies = {
+  MAGIS: 'https://magis.marketing/',
+  APPETISER: 'https://appetiser.com.au/'
+}
 const projects = [
   {
     name: "Mustard School",
     url: "https://mustardschools.app",
     image: "mustard.webp",
+    description: 'Mustard is a Christian ministry that exists to empower young people to be fully alive forever and partners with independent schools to provide Mustard Live events and support the spiritual formation of students. ', 
     tags: [],
+    type: projectType.PROFESSIONAL,
+    company: companies.APPETISER
   },
   {
     name: "FARMap",
     url: "https://www.farmap.com.au/",
     image: "farmap.webp",
+    description: `Map farmer's farm and record all paddock and livestock treatments on their phone, tablet or computer, all linked together. Record livestock movements and treatments as well as all paddock treatments into FARMap.`, 
     tags: [],
+    type: projectType.PROFESSIONAL,
+    company: companies.APPETISER
   },
   {
     name: "Asia Pacific Journal on Curriculum Studies",
     url: "https://apjcs.org/",
     image: "apjcs.webp",
+    description: 'A research journal run by a non-profit, that pushes for the development of curriculum studies and related fields.', 
     tags: [],
+    type: projectType.PROFESSIONAL,
+    company: companies.MAGIS
+  },
+  {
+    name: "Kaisahan",
+    url: "https://apjcs.com.ph/",
+    image: "kaisahan-cover.webp",
+    description: `Farmers are among the most economically disadvantaged sectors in the country. Kaisahan is an NGO that supports various farmer's groups and protects them from being oppressed by large corporate or political interests.`, 
+    tags: [],
+    type: projectType.PROFESSIONAL,
+    company: companies.MAGIS
+  },
+  {
+    name: "Hound Haven",
+    url: "https://houndhavenph.org/",
+    image: "houndhaven.webp",
+    description: `Providing food, shelter, and medicine to many retired or rejected service dogs. They help these service dogs find a new forever home`, 
+    tags: [],
+    type: projectType.PROFESSIONAL,
+    company: companies.MAGIS
   },
   {
     name: "Integrity Initiative",
     url: "https://integrityinitiative.org/",
     image: "integrity.webp",
+    description: 'A campaign advocating for integrity in business processes, this means avoiding bribery and various corrupt practices',
     tags: [],
+    type: projectType.PROFESSIONAL,
+    company: companies.MAGIS
   },
   {
     name: "Giving Tuesday PH",
     url: "https://givingtuesday.ph/",
     image: "givingtuesday.webp",
+    description: 'A global movement advocating doing good in our own small ways. They have two campaigns currently: "Pass the Bread" and "Read Together"', 
     tags: [],
+    type: projectType.PROFESSIONAL,
+    company: companies.MAGIS
   },
   {
     name: "Girl Scouts of the Philippines",
     url: "https://girlscouts.org.ph/",
     image: "gsp.webp",
+    description: `An institution that is instrumental in the formation of millions of our nation's female youth`, 
     tags: [],
+    type: projectType.PROFESSIONAL,
+    company: companies.MAGIS
   },
   {
     name: "Facemask",
     url: "https://github.com/alladinmelico/facemask",
     image: "facemask.gif",
+    description: `An entry for DigitalOcean's hackathon. A mini social media app for sharing pandemic experiences.`, 
     tags: [tags.laravel, tags.vuetify, tags.pusher, tags.inertia],
+    type: projectType.PERSONAL
   },
   {
     name: "SSC System",
     url: "https://github.com/alladinmelico/facemask",
     image: "ssc.webp",
-    tags: [tags.laravel, tags.react, tags.mui, tags.pusher, tags.java],
+    description: 'This is the Safe and Smart Campus. Thesis system for scheduling and monitoring of students that helps to control the spead of virus.', 
+    tags: [tags.laravel, tags.react, tags.mui, tags.pusher, tags.java, tags.raspberry],
+    type: projectType.PERSONAL
   },
   {
     name: "E-Cookbook",
     url: "https://github.com/alladinmelico/integration2",
     image: "ecookbook.webp",
+    description: `Browse meal's recipe, ingredients, and reviews. It uses Azure's NLP to analyze reviews for better analytics.`, 
     tags: [tags.laravel, tags.jquery, tags.azure],
+    type: projectType.PERSONAL
   },
   {
     name: "Online Student Resource System",
     url: "https://github.com/alladinmelico/SVNHS_Student_Resource_Center",
     image: "sir.jpg",
+    description: `An online system where you can create classes, upload activities, and monitor student's performances.`, 
     tags: [tags.codeigniter, tags.bootstrap, tags.azure],
+    type: projectType.PERSONAL
   },
   {
     name: "Movie Android App",
     url: "https://github.com/alladinmelico/MovieDemo",
     image: "javamovie.jpeg",
+    description: `A fullstack android app that uses Java for client and Laravel for backend. It's a movie app where you can browse, create, edit, and delete movies and its actors/producers`, 
     tags: [tags.laravel, tags.java],
+    type: projectType.PERSONAL
   },
 ];
 
-document.getElementById("projects-container").innerHTML = projects.map(
-  (project, index) => {
-    const tags = project.tags.map(
-      (tag) => `
-      <div class="tech-pill">
-        <div class="tech-pill-image">
-          <img src="/${tag.image}" alt="${tag.name}" loading="lazy">
-        </div>
-        <p>${tag.name}</p>
-      </div>
-    `
-    ).join('');
+const filterButtons = document.querySelectorAll('.project-filter-button')
+filterButtons.forEach(button => {
+  button.addEventListener('click', e => {
+    filterButtons.forEach(b => b.classList.remove('selected'))
+    button.classList.add('selected')
+    filterProjects(e.target.getAttribute('data-id'))
+  })
+})
 
-    return `
-      <div class="projects__card" data-aos="zoom-in-up" data-aos-delay="50">
-        <img src="./${project.image}" alt="${project.name}" srcset="" loading="lazy">
-        <div class="projects__card__details">
-          <a href="${project.url}" target="_blank" class="card-title">${project.name}</a>
-          <p class="card-techstack-text">Techstack</p>
-          <div class="tech-pills">
-            ${tags}
+function filterProjects(type = projectType.ALL) {
+  document.getElementById("projects-container").innerHTML = projects.filter(proj => {
+    if (type ==  projectType.ALL) {
+      return true
+    } else {
+      return proj.type == type
+    }
+  }).map(
+    (project, index) => {
+      const tags = project.tags.map(
+        (tag) => `
+        <div class="tech-pill">
+          <div class="tech-pill-image">
+            <img src="/${tag.image}" alt="${tag.name}" loading="lazy">
+          </div>
+          <p>${tag.name}</p>
+        </div>
+      `
+      ).join('');
+  
+      return `
+        <div class="projects__card" data-aos="zoom-in-up" data-aos-delay="50">
+          <img src="./${project.image}" alt="${project.name}" srcset="" loading="lazy">
+          <div class="projects__card__details">
+            <a href="${project.url}" target="_blank" class="card-title">${project.name}</a>
+            <p class="card-description">${project.description}</p>
+            ${tags && (`
+              <p class="card-techstack-text">Techstack</p>
+              <div class="tech-pills">
+                ${tags}
+              </div>
+            `)}
+            ${!!project.company ? (
+              `<a href="${project.company}" target="_blank" class="card-company">via ${project.company == companies.MAGIS ? 'MagisSolutions' : 'Appetiser Apps'}</a>`
+            ): ''}
           </div>
         </div>
-      </div>
-    `;
-  }
-).join('');
+      `;
+    }
+  ).join('');
+}
+
+filterProjects(projectType.ALL)
 
 const techs = [
   {

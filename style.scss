@@ -126,17 +126,31 @@ h3 {
       display: flex;
     }
     
-    a {
-      text-decoration: none;
-      color: white;
+    div {
       padding: 1rem;
       @include md {
         padding: 1rem 2rem 1rem 2rem;
       }
-      &:hover {
-        color: $pink;
+      a {
+        text-decoration: none;
+        color: white;
       }
     }
+  }
+}
+
+.hover-bg-effect {
+  background-image: linear-gradient($pink 0 0);
+  background-position: 0 100%; /*OR bottom left*/
+  background-size: 0% 50%;
+  background-repeat: no-repeat;
+  transition:
+    background-size 0.3s,
+    background-position 0s 0.3s;
+  
+  &:hover {
+    background-position: 100% 100%;
+    background-size: 100% 50%;
   }
 }
 
@@ -327,7 +341,7 @@ section {
   &__card {
     width: 100%;
     max-width: 562px;
-    height: 300px;
+    height: 350px;
     border: 3px solid rgba(255, 255, 255, 0.1);
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
@@ -363,7 +377,10 @@ section {
       width: 100%;
       height: 100%;
       background: linear-gradient(180deg, #0c0f40e7 40%, $darker-blue 100%);
-      padding: 1rem;
+      padding: 0.5rem;
+      @include md {
+        padding: 1rem;
+      }
 
       .card-title {
         font-size: 32px;
@@ -375,7 +392,43 @@ section {
         color: $pink;
         margin-top: 1rem;
       }
+      .card-description {
+        color: white;
+        line-height: 150%;
+        margin: 2rem 0.5rem 1rem 0.5rem;
+      }
+      .card-company {
+        color: rgba(255, 255, 255, 0.458);
+        font-style: italic;
+        font-size: 0.75rem;
+        &:hover {
+          color: white;
+        }
+      }
     }
+  }
+}
+
+.project-filter {
+  display: flex;
+  justify-content: start;
+  margin-top: 2rem;
+  button {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.248);
+    cursor: pointer;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    color: white;
+    &:hover {
+      border-color: white;
+    }
+  }
+  .selected {
+    background-color: white;
+    color: $dark-blue;
   }
 }
 
@@ -387,6 +440,7 @@ section {
   background-color: white;
   padding: 10px;
   border-radius: 0.5rem;
+  height: 100%;
 
   &__image {
     background-color: rgb(91, 87, 87);
@@ -423,8 +477,6 @@ section {
       margin-bottom: 1rem;
       font-weight: 900;
       color: $dark-purple;
-
-
     
       &:hover {
         color: $pink;
@@ -447,6 +499,7 @@ section {
 
 .swiper-slide {
   background-color: transparent;
+  height: 100%;
 }
 
 .swiper {
@@ -505,8 +558,11 @@ section {
 
 .tech-pills {
   display: flex;
-  margin: 1rem;
+  margin: 0;
   flex-wrap: wrap;
+  @include md {
+    margin: 1rem;
+  }
   .tech-pill {
     display: flex;
     justify-content: space-around;
