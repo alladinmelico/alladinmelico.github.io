@@ -289,6 +289,11 @@ filterProjects(projectType.ALL)
 
 const techs = [
   {
+    name: "Typescript",
+    image: "ts.webp",
+    url: "https://www.typescriptlang.org/",
+  },
+  {
     name: "Laravel",
     image: "laravel.webp",
     url: "https://laravel.com/",
@@ -493,6 +498,61 @@ document.getElementById("posts-container").innerHTML = posts.map(
         <p class="post__content__description">${post.description}</p>
       </div>
     </div>
+  </div>
+`
+).join('');
+
+const awards = [
+  {
+    name: 'English Certificate 86/100 (C2 Proficient)',
+    details: 'EFSET • 2023',
+    image: 'certificate.svg'
+  },
+  {
+    name: 'Magna Cum Laude',
+    details: 'TUP-T • 2023',
+    image: 'academic.svg'
+  },
+  {
+    name: 'Grayhawk Awardee for Academic Excellence',
+    details: 'TUP-T • 2023',
+    image: 'academic.svg'
+  },
+  {
+    name: 'Outstanding Graduate',
+    details: 'TUP-T • 2023',
+    image: 'academic.svg'
+  },
+  {
+    name: 'Hackathon Champion',
+    details: 'Appetiser Apps • 2021',
+    image: 'contest.svg'
+  },
+  {
+    name: 'Outstanding Performance in Science',
+    details: 'SVNHS • 2018',
+    image: 'academic.svg'
+  },
+  {
+    name: 'Champion of National Poster Making Competition',
+    details: 'PNRI • 2017',
+    image: 'contest.svg'
+  },
+  {
+    name: 'HackCycling Champion',
+    details: 'American Spaces PH • 2017',
+    image: 'contest.svg'
+  },
+]
+
+document.getElementById("awards-container").innerHTML = awards.map(
+  award => `
+  <div class="award-item">
+    <div class="contents">
+      <p class="title">${award.name}</p>
+      <p class="details">${award.details}</p>
+    </div>
+    <img src="/${award.image}" alt="${award.name}">
   </div>
 `
 ).join('');

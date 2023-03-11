@@ -1,6 +1,6 @@
 @mixin md {
   @media screen and (min-width: 640px) {
-    @content;  
+    @content;
   }
 }
 
@@ -42,7 +42,7 @@ body {
   background: linear-gradient(200deg, #281765 0%, #0e1336 50%);
   background-attachment: fixed;
   background-repeat: no-repeat;
-  // overflow: hidden; 
+  // overflow: hidden;
 }
 
 main {
@@ -125,7 +125,7 @@ h3 {
       width: auto;
       display: flex;
     }
-    
+
     div {
       padding: 1rem;
       @include md {
@@ -144,10 +144,8 @@ h3 {
   background-position: 0 100%; /*OR bottom left*/
   background-size: 0% 50%;
   background-repeat: no-repeat;
-  transition:
-    background-size 0.3s,
-    background-position 0s 0.3s;
-  
+  transition: background-size 0.3s, background-position 0s 0.3s;
+
   &:hover {
     background-position: 100% 100%;
     background-size: 100% 50%;
@@ -184,6 +182,15 @@ h3 {
 
 section {
   margin-top: 8rem;
+}
+
+#job-title {
+  background: linear-gradient(300deg,deepskyblue,darkviolet,#46efac);
+  background-size: 180% 180%;
+  animation: gradient-animation 5s ease infinite;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 #banner {
@@ -295,7 +302,7 @@ section {
     flex-direction: column;
     justify-content: space-between;
     max-width: 400px;
-    
+
     a {
       color: $purple;
       &:hover {
@@ -477,7 +484,7 @@ section {
       margin-bottom: 1rem;
       font-weight: 900;
       color: $dark-purple;
-    
+
       &:hover {
         color: $pink;
         svg {
@@ -528,7 +535,7 @@ section {
 
     a {
       text-decoration: none;
-      text-decoration-color:  white;
+      text-decoration-color: white;
       &:hover {
         text-decoration: underline;
       }
@@ -589,14 +596,7 @@ section {
   height: 248px;
   left: 15%;
   top: 10%;
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    #ba3db2 0%,
-    #623ae9 57.29%,
-    rgba(186, 61, 178, 0) 100%
-  );
-  mix-blend-mode: multiply;
-  opacity: 20%;
+  background: radial-gradient(50% 50% at 50% 50%, #ba3db2 0%, #623ae9 57.29%, #0C0F40 100%);
   position: fixed;
 }
 
@@ -605,11 +605,7 @@ section {
   right: 0;
   width: 542px;
   height: 547px;
-  background: radial-gradient(
-    56.11% 56.11% at 49.98% 43.89%,
-    #3d2397 0%,
-    rgba(186, 61, 178, 0) 85.42%
-  );
+  background: radial-gradient(56.11% 56.11% at 49.98% 43.89%, #3d2397 0%, rgba(186, 61, 178, 0) 85.42%);
   mix-blend-mode: soft-light;
   opacity: 80%;
   position: fixed;
@@ -628,11 +624,11 @@ section {
   from {
     rotate: 0deg;
   }
-  
+
   50% {
     scale: 1 1.5;
   }
-  
+
   to {
     rotate: 360deg;
   }
@@ -647,15 +643,55 @@ section {
   top: 50%;
   translate: -50% -50%;
   border-radius: 50%;
-  background: radial-gradient(
-    56.11% 56.11% at 49.98% 43.89%,
-    #3d2397 0%,
-    rgba(186, 61, 178, 0) 85.42%
-  );  animation: rotate 20s infinite;
+  background: radial-gradient(56.11% 56.11% at 49.98% 43.89%, #3d2397 0%, rgba(186, 61, 178, 0) 85.42%);
+  animation: rotate 20s infinite;
   opacity: 0.8;
   z-index: -1;
 }
 
+#awards {
+  position: relative;
+  .section-title-container {
+    max-width: 1000px;
+    img {
+      animation: rotation 5s infinite;
+    }
+  }
+}
+
+#awards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+  .award-item {
+    height: 150px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    img {
+      mix-blend-mode: multiply;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 150px;
+      width: 150px;
+      z-index: 0;
+    }
+    .contents {
+      color: white;
+      z-index: 99;
+      text-align: center;
+      padding: 5px;
+      .title {
+        font-weight: 900;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
 #blur {
   height: 100%;
   width: 100%;
@@ -707,6 +743,18 @@ section {
   }
   to {
     transform: translateX(100%);
+  }
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
