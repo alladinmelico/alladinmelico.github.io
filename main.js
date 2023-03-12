@@ -529,12 +529,7 @@ const awards = [
     image: 'contest.svg'
   },
   {
-    name: 'Outstanding Performance in Science',
-    details: 'SVNHS • 2018',
-    image: 'academic.svg'
-  },
-  {
-    name: 'Champion of National Poster Making Competition',
+    name: 'Champion of National Digital Poster Making Competition',
     details: 'PNRI • 2017',
     image: 'contest.svg'
   },
