@@ -58,7 +58,7 @@ h1 {
   font-weight: 900;
   font-size: 80px;
   &:hover {
-    background: linear-gradient(300deg, deepskyblue, darkviolet, deepskyblue);
+    background: linear-gradient(300deg, deepskyblue,white, darkviolet, deepskyblue, white);
     background-size: 180% 180%;
     animation: gradient-animation 15s ease-in-out;
     animation-fill-mode: forwards;
@@ -194,7 +194,7 @@ section {
 }
 
 #job-title {
-  background: linear-gradient(300deg, deepskyblue, darkviolet, deepskyblue);
+  background: linear-gradient(300deg,white, deepskyblue, darkviolet, deepskyblue, white);
   background-size: 180% 180%;
   animation: gradient-animation 10s ease infinite;
   background-clip: text;
