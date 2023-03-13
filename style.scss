@@ -57,6 +57,15 @@ h1 {
   color: white;
   font-weight: 900;
   font-size: 80px;
+  &:hover {
+    background: linear-gradient(300deg, deepskyblue, darkviolet, deepskyblue);
+    background-size: 180% 180%;
+    animation: gradient-animation 15s ease-in-out;
+    animation-fill-mode: forwards;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
   @include md {
     font-size: 100px;
   }
@@ -185,9 +194,9 @@ section {
 }
 
 #job-title {
-  background: linear-gradient(300deg,deepskyblue,darkviolet,deepskyblue);
+  background: linear-gradient(300deg, deepskyblue, darkviolet, deepskyblue);
   background-size: 180% 180%;
-  animation: gradient-animation 5s ease infinite;
+  animation: gradient-animation 10s ease infinite;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -289,6 +298,7 @@ section {
 
 #contact {
   position: relative;
+  margin-bottom: 3rem;
   .section-title-container {
     max-width: 320px;
     img {
@@ -596,7 +606,7 @@ section {
   height: 248px;
   left: 15%;
   top: 10%;
-  background: radial-gradient(50% 50% at 50% 50%, #ba3db2 0%, #623ae9 57.29%, #0C0F40 100%);
+  background: radial-gradient(50% 50% at 50% 50%, #ba3db2 0%, #623ae9 57.29%, #0c0f40 100%);
   position: fixed;
 }
 
