@@ -1,0 +1,12 @@
+{
+    "headers": [
+      {
+        "headers" : [
+          {
+            "key" : "X-Robots-Tag",
+            "value" : "index"
+          }
+        ]
+      }
+    ]
+  }
