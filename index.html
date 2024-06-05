@@ -195,7 +195,7 @@
     <div id="blob"></div>
     <div id="blur"></div>
     <footer>
-      © 2023 Alladin Melico
+      © <span id="year"></span> Alladin Melico
     </footer>
     <img
       src="/circle-wave-big.svg"
@@ -208,6 +208,9 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init();
+
+      const year = new Date().getFullYear();
+      document.getElementById("year").textContent = year;
     </script>
   </body>
 </html>
