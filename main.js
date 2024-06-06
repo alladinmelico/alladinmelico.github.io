@@ -473,8 +473,8 @@ const techs = [
 ]
 document.getElementById('techstacks-container').innerHTML = techs
   .map(
-    (tech) => `
-  <div class="techstack">
+    (tech, index) => `
+  <div class="techstack" data-aos="zoom-in" data-aos-delay="${index * 50}">
     <div>
       <img src="/${tech.image}" alt="${tech.name}" class="logo" loading="lazy">
     </div>
@@ -657,7 +657,7 @@ document.getElementById('awards-container').innerHTML = awards
       <p class="title">${award.name}</p>
       <p class="details">${award.details}</p>
     </div>
-    <img src="/${award.image}" alt="${award.name}">
+    <img src="/${award.image}" alt="${award.name}" data-aos="zoom-in" data-aos-delay="300">
   </div>
 `
   )
