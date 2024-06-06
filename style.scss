@@ -26,6 +26,7 @@ $dark-blue: #0c0f40;
 $dark-purple: #0c0f40;
 $purple: #4417a6;
 $pink: #bd3fbf;
+$lightPurple: #9f3bff;
 
 html,
 body {
@@ -230,7 +231,7 @@ section {
     }
 
     a {
-      color: $purple;
+      color: $lightPurple;
       margin: 0 1rem 0 1rem;
       &:hover {
         color: white;
@@ -315,6 +316,8 @@ section {
 
     a {
       color: $purple;
+      display: flex;
+      align-items: center;
       &:hover {
         color: white;
       }
