@@ -613,6 +613,11 @@ const awards = [
     image: 'certificate.svg',
   },
   {
+    name: 'Valedictorian',
+    details: 'TUP-T • 2023',
+    image: 'academic.svg',
+  },
+  {
     name: 'Magna Cum Laude',
     details: 'TUP-T • 2023',
     image: 'academic.svg',
