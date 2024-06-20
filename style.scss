@@ -4,6 +4,12 @@
   }
 }
 
+@mixin lg {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}
+
 :root {
   font-family: "Archivo", sans-serif;
   font-synthesis: none;
@@ -56,8 +62,8 @@ main {
 
 h1 {
   color: white;
-  font-weight: 900;
-  font-size: 80px;
+  font-size: 28px;
+  text-align: left;
   // &:hover {
   //   background: linear-gradient(300deg, deepskyblue,white, darkviolet, deepskyblue, white);
   //   background-size: 180% 180%;
@@ -68,7 +74,7 @@ h1 {
   //   color: transparent;
   // }
   @include md {
-    font-size: 100px;
+    font-size: 48px;
   }
 }
 
@@ -82,9 +88,8 @@ h2 {
 }
 
 h3 {
-  color: $pink;
+  color: white;
   font-size: 22px;
-  margin-bottom: 1rem;
   @include md {
     font-size: 32px;
     margin: none;
@@ -190,6 +195,44 @@ h3 {
   }
 }
 
+#tag-line {
+  color: white;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  margin-left: 0.5rem;
+  padding-left: 1rem;
+  border-left: solid 4px $pink;
+
+  p {
+    line-height: 30px;
+    span {
+      background-color: $lightPurple;
+      color: $dark-blue;
+      padding: 0 0.5rem;
+      border-radius: 5px;
+    }
+  }
+}
+
+#socmed-icons-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+
+  a {
+    color: $lightPurple;
+    margin: 0 1rem 0 1rem;
+    text-decoration: none;
+    &:hover {
+      color: white;
+    }
+  }
+
+  @include md {
+    justify-content: start;
+  }
+}
+
 section {
   margin-top: 8rem;
 }
@@ -203,10 +246,65 @@ section {
   color: transparent;
 }
 
+.highlight {
+  background-image: linear-gradient($darker-blue 0 0);
+  background-size: 0% 50%;
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  background-size: 100% 50%;
+  text-decoration: none;
+  color: $pink;
+}
+
+#header-images {
+  position: relative;
+  height: 500px;
+  width: 50%;
+  display: none;
+
+  img {
+    position: absolute;
+  }
+
+  #laravel-image {
+    top: 40%;
+    left: 35%;
+    animation: float 2s infinite ease;
+  }
+
+  #react-image {
+    right: 10%;
+    top: 10%;
+    animation: float 4s infinite ease;
+  }
+
+  #vue-image {
+    left: 20%;
+    top: 10%;
+    animation: float 3s infinite;
+  }
+
+  #node-image {
+    left: 0%;
+    bottom: 10%;
+    animation: float 2s infinite ease;
+  }
+
+  #tailwind-image {
+    right: 10%;
+    top: 60%;
+    animation: float 3s infinite;
+  }
+
+  @include lg {
+    display: block;
+  }
+}
+
 #banner {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   flex-wrap: wrap;
   align-items: center;
   position: relative;
@@ -214,8 +312,40 @@ section {
 
   h1 {
     margin: 2rem 0 2rem 0;
+    font-size: 40px;
+    font-weight: 900;
     text-align: center;
+
+    @include lg {
+      text-align: left;
+    }
   }
+
+  h2 {
+    font-size: 60px;
+    
+    @include md {
+      font-size: 96px;
+    }
+  }
+
+  h3 {
+    font-size: 44px;
+
+    @include md {
+      font-size: 64px;
+    }
+  }
+
+  h2, h3 {
+    color: $pink;
+    text-align: center;
+
+    @include lg {
+      text-align: left;
+    }
+  }
+
   .profile-image {
     @include md {
       margin-right: 3rem;
@@ -714,6 +844,33 @@ section {
   z-index: -1;
 }
 
+#backToTopBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 10px;
+  right: 10px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: $dark-blue;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
 @keyframes rotation {
   from {
     transform: rotate(0deg);
@@ -737,7 +894,7 @@ section {
     transform: scale(1);
   }
   to {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
 }
 

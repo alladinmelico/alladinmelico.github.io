@@ -537,13 +537,9 @@ document.getElementById('socmeds-container').innerHTML = socmends
   .join('')
 document.getElementById('socmed-icons-container').innerHTML = socmends
   .map(
-    (socmed) => `
-  <a href="${socmed.url}" target="_blank" rel="noopener noreferrer">
-    ${socmed.icon}
-  </a>
-`
+    (socmed) => `<a href="${socmed.url}" target="_blank" rel="noopener noreferrer">${socmed.icon}</a>`
   )
-  .join('')
+  .join(' ')
 
 const posts = [
   {
@@ -684,4 +680,21 @@ if ('serviceWorker' in navigator) {
       .then((res) => console.log('service worker registered'))
       .catch((err) => console.log('service worker not registered', err))
   })
+}
+
+let mybutton = document.getElementById("backToTopBtn");
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
+}
+
+mybutton.onclick = function() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
 }

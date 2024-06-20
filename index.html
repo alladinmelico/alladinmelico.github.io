@@ -75,12 +75,23 @@
     </nav>
     <main>
       <section id="banner" class="profile">
-        <div>
-          <h1 class="hover-bg-effect">Alladin Melico</h1>
-          <div class="banner-details">
-            <h3 id="job-title">Full Stack Developer</h3>
-            <div id="socmed-icons-container"></div>
+        <div id="header-details">
+          <h1>Alladin Melico</h1>
+          <h2>Full Stack</h2>
+          <h3>Developer</h3>
+          <div id="tag-line">
+            <p>A <a href="/#awards" class="highlight">Multi-Award-Winning</a> Developer</p>
+            <p>Specializing in Developing Innovative MVPs </p>
+            <p>with TypeScript, Node.js, and Laravel</p>
           </div>
+          <div id="socmed-icons-container"></div>
+        </div>
+        <div id="header-images">
+          <img src="/laravel.webp" alt="Laravel" id="laravel-image" loading="lazy" height="158" />
+          <img src="/react.webp" alt="React" id="react-image" loading="lazy" height="100" />
+          <img src="/vue.webp" alt="Vue" id="vue-image" loading="lazy" height="100" />
+          <img src="/tailwind.webp" alt="tailwind" id="tailwind-image" loading="lazy" height="100" />
+          <img src="/node.webp" alt="Node" id="node-image" loading="lazy" height="100" />
         </div>
         <img
           src="/triangle.svg"
@@ -197,6 +208,9 @@
     <footer>
       © <span id="year"></span> Alladin Melico
     </footer>
+    <button id="backToTopBtn" title="Go to top">
+      <img src="/arrow-up.svg" alt="Back to top" />
+    </button>
     <img
       src="/circle-wave-big.svg"
       alt="wave"
