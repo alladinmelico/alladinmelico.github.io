@@ -22,13 +22,13 @@ const swiper = new Swiper('.swiper', {
   spaceBetween: 10,
   autoHeight: true,
   breakpoints: {
-    420: {
-      slidesPerView: 2,
-      spaceBetween: 20,
-    },
     640: {
-      slidesPerView: 3,
+      slidesPerView: 2,
       spaceBetween: 50,
+    },
+    900: {
+      slidesPerView: 3,
+      spaceBetween: 40,
     },
   },
 })
@@ -537,7 +537,8 @@ document.getElementById('socmeds-container').innerHTML = socmends
   .join('')
 document.getElementById('socmed-icons-container').innerHTML = socmends
   .map(
-    (socmed) => `<a href="${socmed.url}" target="_blank" rel="noopener noreferrer">${socmed.icon}</a>`
+    (socmed) =>
+      `<a href="${socmed.url}" target="_blank" rel="noopener noreferrer">${socmed.icon}</a>`
   )
   .join(' ')
 
@@ -545,7 +546,7 @@ const posts = [
   {
     name: 'facemask',
     description:
-      'A mini social media app for sharing Pandemic experiences. Post you thoughts, follow users, chat with them, easily see their posts on your news feed and a lot more!',
+      'A mini social media app for sharing Pandemic experiences. Post you thoughts, follow users, chat with them, and a lot more!',
     url: 'https://dev.to/alladinmelico/facemask-a-mini-social-media-app-for-sharing-pandemic-experiences-3-n-i0f',
     image: 'facemask-cover.webp',
     tag: 'Programming',
@@ -604,14 +605,14 @@ document.getElementById('posts-container').innerHTML = posts
 
 const awards = [
   {
-    name: 'English Certificate 86/100 (C2 Proficient)',
-    details: 'EFSET • 2023',
-    image: 'certificate.svg',
-  },
-  {
     name: 'Valedictorian',
     details: 'TUP-T • 2023',
     image: 'academic.svg',
+  },
+  {
+    name: 'English Certificate 86/100 (C2 Proficient)',
+    details: 'EFSET • 2023',
+    image: 'certificate.svg',
   },
   {
     name: 'Magna Cum Laude',
@@ -682,19 +683,21 @@ if ('serviceWorker' in navigator) {
   })
 }
 
-let mybutton = document.getElementById("backToTopBtn");
+let mybutton = document.getElementById('backToTopBtn')
 
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block";
-    } else {
-        mybutton.style.display = "none";
-    }
+window.onscroll = function () {
+  scrollFunction()
 }
 
-mybutton.onclick = function() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = 'block'
+  } else {
+    mybutton.style.display = 'none'
+  }
+}
+
+mybutton.onclick = function () {
+  document.body.scrollTop = 0
+  document.documentElement.scrollTop = 0
 }

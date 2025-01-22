@@ -221,7 +221,7 @@ h3 {
   align-items: center;
 
   a {
-    color: $lightPurple;
+    color: $pink;
     margin: 0 1rem 0 1rem;
     text-decoration: none;
     &:hover {
@@ -248,13 +248,8 @@ section {
 }
 
 .highlight {
-  background-image: linear-gradient($darker-blue 0 0);
-  background-size: 0% 50%;
-  background-repeat: no-repeat;
-  background-position: 100% 100%;
-  background-size: 100% 50%;
-  text-decoration: none;
-  color: $pink;
+  color: white;
+  font-weight: 900;
 }
 
 #header-images {
@@ -265,18 +260,25 @@ section {
 
   img {
     position: absolute;
+    mix-blend-mode: multiply;
+    filter: grayscale(100%) brightness(0.8);
+
+    &:hover {
+      filter: grayscale(0) brightness(1);
+      mix-blend-mode: normal;
+    }
   }
 
   #laravel-image {
-    top: 40%;
-    left: 35%;
-    animation: float 2s infinite ease;
-  }
-
-  #react-image {
     right: 10%;
     top: 10%;
     animation: float 4s infinite ease;
+  }
+
+  #react-image {
+    top: 40%;
+    left: 35%;
+    animation: float 2s infinite ease;
   }
 
   #vue-image {
@@ -324,6 +326,7 @@ section {
 
   h2 {
     font-size: 60px;
+    color: white;
     
     @include md {
       font-size: 96px;
@@ -332,6 +335,8 @@ section {
 
   h3 {
     font-size: 44px;
+    color: $pink;
+    margin-top: 0;
 
     @include md {
       font-size: 64px;
@@ -339,7 +344,6 @@ section {
   }
 
   h2, h3 {
-    color: $pink;
     text-align: center;
 
     @include lg {
@@ -376,17 +380,17 @@ section {
   #banner-triangle {
     top: 0;
     left: 25%;
-    animation: rotation 10s infinite linear;
+    animation: rotation 20s infinite linear;
   }
   #banner-hexagon {
     top: 15%;
     right: 0%;
-    animation: rotation 20s infinite linear;
+    animation: rotation 120s infinite linear;
   }
   #banner-wave {
     top: 80%;
     right: 25%;
-    animation: rotation 40s infinite linear;
+    animation: rotation 40s infinite ease-in-out;
   }
 }
 
@@ -655,6 +659,7 @@ section {
 
 .swiper {
   width: 100%;
+  max-width: 1000px;
   margin-top: 2rem;
 }
 
@@ -690,7 +695,8 @@ section {
       object-position: center;
       height: 100%;
       width: 100%;
-      filter: grayscale(1);
+      filter: grayscale(1) brightness(2);
+      mix-blend-mode: multiply;
     }
     .title {
       color: rgba(255, 255, 255, 0.5);
