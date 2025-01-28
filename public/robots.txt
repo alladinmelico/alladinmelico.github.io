@@ -4,4 +4,4 @@ Disallow: /private/
 Allow: /
 
 # Specify the location of your sitemap
-Sitemap: https://alladinmelico.github.io/sitemap.xml
+Sitemap: https://alladinmelico.dev/sitemap.xml

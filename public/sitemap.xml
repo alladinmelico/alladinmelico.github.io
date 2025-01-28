@@ -2,42 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <!-- Homepage -->
     <url>
-        <loc>https://alladinmelico.github.io/</loc>
+        <loc>https://alladinmelico.dev/</loc>
         <lastmod>2025-01-28</lastmod>
         <priority>1.0</priority>
     </url>
 
     <!-- Projects Section -->
     <url>
-        <loc>https://alladinmelico.github.io/#projects</loc>
+        <loc>https://alladinmelico.dev/#projects</loc>
         <lastmod>2025-01-28</lastmod>
         <priority>0.8</priority>
     </url>
 
     <!-- Skills Section -->
     <url>
-        <loc>https://alladinmelico.github.io/#techstack</loc>
+        <loc>https://alladinmelico.dev/#techstack</loc>
         <lastmod>2025-01-28</lastmod>
         <priority>0.7</priority>
     </url>
 
     <!-- Blog Posts Section -->
     <url>
-        <loc>https://alladinmelico.github.io/#posts</loc>
+        <loc>https://alladinmelico.dev/#posts</loc>
         <lastmod>2025-01-28</lastmod>
         <priority>0.7</priority>
     </url>
 
     <!-- Awards Section -->
     <url>
-        <loc>https://alladinmelico.github.io/#awards</loc>
+        <loc>https://alladinmelico.dev/#awards</loc>
         <lastmod>2025-01-28</lastmod>
         <priority>0.6</priority>
     </url>
 
     <!-- Contact Section -->
     <url>
-        <loc>https://alladinmelico.github.io/#contact</loc>
+        <loc>https://alladinmelico.dev/#contact</loc>
         <lastmod>2025-01-28</lastmod>
         <priority>0.5</priority>
     </url>

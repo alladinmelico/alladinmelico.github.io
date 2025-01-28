@@ -25,7 +25,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: 'https://alladinmelico.github.io/'
+      url: 'https://alladinmelico.dev/'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
