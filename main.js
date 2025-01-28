@@ -117,6 +117,7 @@ const projectType = {
 const companies = {
   MAGIS: 'https://magis.marketing/',
   APPETISER: 'https://appetiser.com.au/',
+  AMAZE: 'https://www.amaze.au/',
 }
 const projects = [
   {
@@ -163,6 +164,15 @@ const projects = [
     tags: [],
     type: projectType.PROFESSIONAL,
     company: companies.APPETISER,
+  },
+  {
+    name: 'UNEOS',
+    url: 'https://uneos.au/',
+    image: 'uneos.webp',
+    description: `UNEOS delivers advanced strategic Australian-based cloud storage options designed to optimise your data management, providing you with a competitive edge that is scalable, secure, and cost-effective.`,
+    tags: [],
+    type: projectType.PROFESSIONAL,
+    company: companies.AMAZE,
   },
   {
     name: 'KeepSafe',
@@ -366,7 +376,9 @@ function filterProjects(type = projectType.ALL) {
                   }" target="_blank" class="card-company">via ${
                     project.company == companies.MAGIS
                       ? 'MagisSolutions'
-                      : 'Appetiser Apps'
+                      : project.company == companies.APPETISER
+                      ? 'Appetiser Apps'
+                      : 'Amaze Communication'
                   }</a>`
                 : ''
             }
