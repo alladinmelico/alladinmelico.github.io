@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <!-- Homepage -->
     <url>
         <loc>https://alladinmelico.dev/</loc>
+        <image:image>
+            <image:loc>https://alladinmelico.dev/Profile.webp</image:loc>
+        </image:image>
         <lastmod>2025-01-28</lastmod>
         <priority>1.0</priority>
     </url>
@@ -10,6 +14,9 @@
     <!-- Projects Section -->
     <url>
         <loc>https://alladinmelico.dev/#projects</loc>
+        <image:image>
+            <image:loc>https://alladinmelico.dev/Profile.webp</image:loc>
+        </image:image>
         <lastmod>2025-01-28</lastmod>
         <priority>0.8</priority>
     </url>
@@ -17,6 +24,9 @@
     <!-- Skills Section -->
     <url>
         <loc>https://alladinmelico.dev/#techstack</loc>
+        <image:image>
+            <image:loc>https://alladinmelico.dev/Profile.webp</image:loc>
+        </image:image>
         <lastmod>2025-01-28</lastmod>
         <priority>0.7</priority>
     </url>
@@ -24,6 +34,9 @@
     <!-- Blog Posts Section -->
     <url>
         <loc>https://alladinmelico.dev/#posts</loc>
+        <image:image>
+            <image:loc>https://alladinmelico.dev/Profile.webp</image:loc>
+        </image:image>
         <lastmod>2025-01-28</lastmod>
         <priority>0.7</priority>
     </url>
@@ -31,6 +44,9 @@
     <!-- Awards Section -->
     <url>
         <loc>https://alladinmelico.dev/#awards</loc>
+        <image:image>
+            <image:loc>https://alladinmelico.dev/Profile.webp</image:loc>
+        </image:image>
         <lastmod>2025-01-28</lastmod>
         <priority>0.6</priority>
     </url>
@@ -38,6 +54,9 @@
     <!-- Contact Section -->
     <url>
         <loc>https://alladinmelico.dev/#contact</loc>
+        <image:image>
+            <image:loc>https://alladinmelico.dev/Profile.webp</image:loc>
+        </image:image>
         <lastmod>2025-01-28</lastmod>
         <priority>0.5</priority>
     </url>
