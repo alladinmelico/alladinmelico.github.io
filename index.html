@@ -307,6 +307,25 @@
 
       const year = new Date().getFullYear();
       document.getElementById("year").textContent = year;
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const blob = document.getElementById('blob')
+        if (!blob) {
+          console.error('Element with id "blob" not found')
+          return
+        }
+      
+        window.onpointermove = (event) => {
+          const { clientX, clientY } = event
+          blob.animate(
+            {
+              left: `${clientX}px`,
+              top: `${clientY}px`,
+            },
+            { duration: 3000, fill: 'forwards' }
+          )
+        }
+      })
     </script>
 
     <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
