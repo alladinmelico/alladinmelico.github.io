@@ -38,6 +38,11 @@ jobs:
 
       - name: Build
         run: npm run build
+      
+      - name: Start development server
+        run: npm run dev &
+        env:
+          NODE_ENV: development
 
       - name: Prerender the site
         run: node prerender.js
