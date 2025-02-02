@@ -50,9 +50,8 @@ jobs:
         uses: actions/configure-pages@v3
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/deploy-pages@v4
         with:
-          name: build-artifact
           path: './dist'
 
       - name: Deploy to GitHub Pages
