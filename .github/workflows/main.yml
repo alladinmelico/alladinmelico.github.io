@@ -31,7 +31,10 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm install --force
+        run: npm ci
+
+      - name: Rebuild esbuild
+        run: npm rebuild esbuild
 
       - name: Build
         run: npm run build
