@@ -58,6 +58,9 @@ jobs:
           name: github-pages
           path: './dist'
 
+      - name: Debug Build Output
+        run: ls -lah ./dist
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v3
