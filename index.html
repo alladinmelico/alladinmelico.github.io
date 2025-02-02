@@ -55,6 +55,15 @@
     
     <title>Alladin Melico | Multi-Award-Winning Full Stack Developer/Software Engineer</title>
 
+    <link rel="stylesheet" href="style.scss">
+    <!-- Swiper -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <!-- SEO -->
     <script type="application/ld+json">
       {
@@ -301,7 +310,6 @@
       alt="decorative graphic"
     />
 
-    <script type="module" src="/main.js"></script>
     <script defer>
       const menuButton = document.querySelector('#menu-button')
       const menuOpen = document.querySelector('#menu-open')
@@ -996,6 +1004,33 @@
 
       const year = new Date().getFullYear();
       document.getElementById("year").textContent = year;
+
+      new Swiper('.swiper', {
+        direction: 'horizontal',
+        pagination: {
+          el: '.swiper-pagination',
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        scrollbar: {
+          el: '.swiper-scrollbar',
+        },
+        slidesPerView: 1,
+        spaceBetween: 10,
+        autoHeight: true,
+        breakpoints: {
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 50,
+          },
+          900: {
+            slidesPerView: 3,
+            spaceBetween: 40,
+          },
+        },
+      })
     </script>
 
     <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
