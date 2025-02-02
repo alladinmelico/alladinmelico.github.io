@@ -672,19 +672,24 @@ document.getElementById('awards-container').innerHTML = awards
   )
   .join('')
 
-const blob = document.getElementById('blob')
+document.addEventListener('DOMContentLoaded', () => {
+  const blob = document.getElementById('blob')
+  if (!blob) {
+    console.error('Element with id "blob" not found')
+    return
+  }
 
-window.onpointermove = (event) => {
-  const { clientX, clientY } = event
-
-  blob.animate(
-    {
-      left: `${clientX}px`,
-      top: `${clientY}px`,
-    },
-    { duration: 3000, fill: 'forwards' }
-  )
-}
+  window.onpointermove = (event) => {
+    const { clientX, clientY } = event
+    blob.animate(
+      {
+        left: `${clientX}px`,
+        top: `${clientY}px`,
+      },
+      { duration: 3000, fill: 'forwards' }
+    )
+  }
+})
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function () {
