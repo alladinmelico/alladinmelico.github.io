@@ -24,6 +24,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Remove existing node_modules and package-lock.json
+        run: rm -rf node_modules package-lock.json yarn.lock
+
       - name: Set up Node
         uses: actions/setup-node@v3
         with:
@@ -31,12 +34,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
-
-      - name: Start development server
-        run: npm run dev &
-        env:
-          NODE_ENV: development
+        run: npm install --force
 
       - name: Build
         run: npm run build
