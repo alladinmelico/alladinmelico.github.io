@@ -820,7 +820,9 @@
         .map(
           (socmed) => `
         <a href="${socmed.url}" target="_blank" rel="noopener noreferrer" data-aos="fade-right">
-          ${socmed.icon}
+          <div>
+            ${socmed.icon}
+          </div>
           <p>${socmed.name}</p>    
           <img src="/arrow.svg" alt="arrow" class="socmed-arrow">         
         </a>

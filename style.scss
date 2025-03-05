@@ -174,7 +174,7 @@ h3 {
   fill: white;
   stroke-dasharray: 500;
   stroke-dashoffset: -500;
-  animation: animate 5s forwards infinite;
+  animation: animate 10s alternate-reverse infinite;
 }
 
 @keyframes animate {
@@ -985,4 +985,5 @@ footer {
   margin-bottom: 0;
   color: white;
   padding: 1rem;
+  padding-top: 2rem;
 }
