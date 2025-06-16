@@ -98,6 +98,43 @@ h3 {
   font-weight: 900;
 }
 
+#quote {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+  margin-bottom: 0;
+  @include md {
+    margin: 4rem 0;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    height: 1px;
+    background-color: $purple;
+    flex: 1;
+    display: none;
+    @include md {
+      display: block;
+    }
+  }
+
+  h5 {
+    text-align: center;
+    color: white;
+    font-weight: 400;
+    margin: 0 2rem;
+    font-style: italic;
+    white-space: nowrap;
+    font-size: 1.2rem;
+    @include md {
+      font-size: 2rem;
+    }
+  }
+}
+
+
 .menu-show {
   display: flex !important;
 }
@@ -226,7 +263,7 @@ h3 {
     margin: 0 1rem 0 1rem;
     text-decoration: none;
     &:hover {
-      color: white;
+      color: $purple;
     }
   }
 
@@ -401,10 +438,19 @@ section {
   flex-wrap: wrap;
   padding: 1rem;
   color: white;
+  margin-top: 2rem;
+  @include md {
+    margin-top: 4rem;
+  }
   .highlight-item {
-    max-width: 300px;
+    max-width: 350px;
     width: 100%;
     margin-bottom: 1rem;
+    background-color: $dark-blue;
+    border-radius: 10px;
+    padding-left: 1.5rem;
+    padding-right: 1rem;
+    padding-top: 0;
     img {
       margin-left: -2rem;
       margin-bottom: -2rem;
@@ -421,7 +467,7 @@ section {
 
       li {
         margin-bottom: 1rem;
-        color: rgb(210, 210, 210);
+        color: rgb(230, 230, 230);
       }
 
       li::marker {
@@ -491,7 +537,7 @@ section {
       display: flex;
       align-items: center;
       &:hover {
-        color: white;
+        color: $purple;
       }
       &:hover img {
         opacity: 1;
@@ -987,3 +1033,5 @@ footer {
   padding: 1rem;
   padding-top: 2rem;
 }
+
+
