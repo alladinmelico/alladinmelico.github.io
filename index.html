@@ -120,6 +120,40 @@
         </div>
       </div>
     </nav>
+    
+    <!-- Floating Navigation -->
+    <nav class="floating-nav" id="floating-nav">
+      <div class="floating-nav__item" data-section="banner">
+        <div class="floating-nav__dot"></div>
+        <span class="floating-nav__label">Home</span>
+      </div>
+      <div class="floating-nav__line"></div>
+      <div class="floating-nav__item" data-section="projects">
+        <div class="floating-nav__dot"></div>
+        <span class="floating-nav__label">Projects</span>
+      </div>
+      <div class="floating-nav__line"></div>
+      <div class="floating-nav__item" data-section="techstack">
+        <div class="floating-nav__dot"></div>
+        <span class="floating-nav__label">Skills</span>
+      </div>
+      <div class="floating-nav__line"></div>
+      <div class="floating-nav__item" data-section="posts">
+        <div class="floating-nav__dot"></div>
+        <span class="floating-nav__label">Posts</span>
+      </div>
+      <div class="floating-nav__line"></div>
+      <div class="floating-nav__item" data-section="awards">
+        <div class="floating-nav__dot"></div>
+        <span class="floating-nav__label">Awards</span>
+      </div>
+      <div class="floating-nav__line"></div>
+      <div class="floating-nav__item" data-section="contact">
+        <div class="floating-nav__dot"></div>
+        <span class="floating-nav__label">Contact</span>
+      </div>
+    </nav>
+    
     <main>
       <section id="banner" class="profile">
         <div id="header-details">
@@ -1014,6 +1048,77 @@
         document.body.scrollTop = 0
         document.documentElement.scrollTop = 0
       }
+
+      // Floating Navigation Functionality
+      const floatingNav = document.getElementById('floating-nav')
+      const bannerSection = document.getElementById('banner')
+      const navItems = document.querySelectorAll('.floating-nav__item')
+      
+      // Function to check if banner is visible
+      function isBannerVisible() {
+        if (!bannerSection) return true
+        const rect = bannerSection.getBoundingClientRect()
+        return rect.bottom > 0
+      }
+      
+      // Function to show/hide floating nav
+      function toggleFloatingNav() {
+        if (isBannerVisible()) {
+          floatingNav.classList.remove('visible')
+        } else {
+          floatingNav.classList.add('visible')
+        }
+      }
+      
+      // Function to update active nav item
+      function updateActiveNavItem() {
+        const sections = ['banner', 'projects', 'techstack', 'posts', 'awards', 'contact']
+        const scrollPosition = window.scrollY + window.innerHeight / 2
+        
+        sections.forEach((sectionId, index) => {
+          const section = document.getElementById(sectionId)
+          if (!section) return
+          
+          const rect = section.getBoundingClientRect()
+          const sectionTop = rect.top + window.scrollY
+          const sectionBottom = sectionTop + rect.height
+          
+          const navItem = document.querySelector(`[data-section="${sectionId}"]`)
+          if (!navItem) return
+          
+          if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+            navItem.classList.add('active')
+          } else {
+            navItem.classList.remove('active')
+          }
+        })
+      }
+      
+      // Function to scroll to section
+      function scrollToSection(sectionId) {
+        const section = document.getElementById(sectionId)
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' })
+        }
+      }
+      
+      // Event listeners
+      window.addEventListener('scroll', () => {
+        toggleFloatingNav()
+        updateActiveNavItem()
+      })
+      
+      // Add click listeners to nav items
+      navItems.forEach(item => {
+        item.addEventListener('click', () => {
+          const sectionId = item.getAttribute('data-section')
+          scrollToSection(sectionId)
+        })
+      })
+      
+      // Initial check
+      toggleFloatingNav()
+      updateActiveNavItem()
     </script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
